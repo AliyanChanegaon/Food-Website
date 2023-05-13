@@ -1,0 +1,106 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Home page top section */
+.homeTopSection {
+  background-image: url("../img/banenr-img1.jpg");
+  background-repeat: no-repeat;
+  height: 150vh;
+}
+
+.homeTopSection > nav {
+  /* min-height: 300px; */
+
+  margin: 0px 0px 30px 0px;
+
+  width: 100%;
+  min-width: 100%;
+}
+
+nav > ul {
+  /* total should be 60 height + padding */
+  padding: 40px 0px 10px 0px;
+  margin: 0px 40px 10px 40px;
+
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+.navPages {
+  display: flex;
+  gap: 20px;
+}
+
+nav > ul > div > img {
+  height: fit-content;
+  width: 30px;
+  margin-left: 30px;
+}
+
+ul > .navPages {
+  margin-right: 50px;
+}
+
+nav > ul > div > a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+#cart {
+  padding-top: 5px;
+}
+
+.FirstMiddle {
+  margin: 40vh 20px 0px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+  text-align: center;
+}
+
+/* .PreviousPage{
+background-color: white;
+color: black;
+}
+.NextPage{
+  background-color: white;
+} */
+
+
+
+
+.FirstMiddle > div > h1 {
+  font-size: 75px;
+}
+
+.FirstMiddle > div > h2 {
+  font-weight: 200;
+  font-size: 45px;
+  gap: 20px;
+}
+
+.wave {
+  background-image: url("../img/wave.png");
+  position: relative;
+  height: 35px;
+  bottom: 45px;
+}
+
+/* Second Section */
+
+.SecondSection {
+  height: 100vh;
+}
