@@ -655,19 +655,6 @@ color:
 
 
 /* Footer */
-.Footer{
-  height: 150px;
-  background-color: var(--third-color);
-  font-weight: 200;
-  font-size: small;
-  color: var(--main-bg-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
-}
 
 
 
