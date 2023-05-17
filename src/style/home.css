@@ -59,7 +59,7 @@ justify-content: space-around;
 
 .navPages {
   display: flex;
-  gap: 35px;
+  gap: 15px;
 }
 
 nav  > img {
