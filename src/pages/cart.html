@@ -24,5 +24,126 @@
             </ul>
     </nav>
     <h1>Cart</h1>
+
+    <section class="cart_section">
+        <h1>SHOPPING CART</h1>
+        <div class="cart_container">
+            <div class="cart_container-left">
+                <div class="cart_left-items">
+                    <article class="cart_item">
+                        <div class="cart_item-image">
+                            <img src="https://images.pexels.com/photos/604969/pexels-photo-604969.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                        </div>
+                        <div class="cart_item-details">
+                            <h4>Pizza</h4>
+                            <p>Chicken Pizza</p>
+                        </div>
+                        <div class="cart_item-quantity">
+                            <button class="cart_quantity-btn minus">-</button>
+                            <input type="text" value="1" readonly class="item-quantity">
+                            <button class="cart_quantity-btn plus">+</button>
+                        </div>
+                        <div class="cart_item-price">
+                            <h4 class="item-price">$ 25.00</h4>
+                        </div>
+                        <div class="cart_item-remove">
+                            <button class="cart_delete-btn"><i class="fa-solid fa-trash"></i></i></button>
+                        </div>
+                    </article>
+                    <article class="cart_item">
+                        <div class="cart_item-image">
+                            <img src="https://i.pinimg.com/564x/c9/d4/17/c9d41759a8a425c12f4cedb6e66ce416.jpg" alt="">
+                        </div>
+                        <div class="cart_item-details">
+                            <h4>Wrap</h4>
+                            <p>Chicken Wrap</p>
+                        </div>
+                        <div class="cart_item-quantity">
+                            <button class="cart_quantity-btn minus">-</button>
+                            <input type="text" value="1" readonly class="item-quantity">
+                            <button class="cart_quantity-btn plus">+</button>
+                        </div>
+                        <div class="cart_item-price">
+                            <h4 class="item-price">$ 25.00</h4>
+                        </div>
+                        <div class="cart_item-remove">
+                            <button class="cart_delete-btn"><i class="fa-solid fa-trash"></i></i></button>
+                        </div>
+                    </article>
+                    <article class="cart_item">
+                        <div class="cart_item-image">
+                            <img src="https://i.pinimg.com/564x/81/74/5a/81745a7b3dd0651cdef3ddc3f7c79d02.jpg" alt="">
+                        </div>
+                        <div class="cart_item-details">
+                            <h4>Burger</h4>
+                            <p>Honey Bacon</p>
+                        </div>
+                        <div class="cart_item-quantity">
+                            <button class="cart_quantity-btn minus">-</button>
+                            <input type="text" value="1" readonly class="item-quantity">
+                            <button class="cart_quantity-btn plus">+</button>
+                        </div>
+                        <div class="cart_item-price">
+                            <h4 class="item-price">$ 25.00</h4>
+                        </div>
+                        <div class="cart_item-remove">
+                            <button class="cart_delete-btn"><i class="fa-solid fa-trash"></i></i></button>
+                        </div>
+                    </article>
+                    <article class="cart_item">
+                        <div class="cart_item-image">
+                            <img src="https://i.pinimg.com/564x/80/7c/04/807c047474856b1aaa69fe58f8af29a5.jpg" alt="">
+                        </div>
+                        <div class="cart_item-details">
+                            <h4>Bread</h4>
+                            <p>Wool Roll</p>
+                        </div>
+                        <div class="cart_item-quantity">
+                            <button class="cart_quantity-btn minus">-</button>
+                            <input type="text" value="1" readonly class="item-quantity">
+                            <button class="cart_quantity-btn plus">+</button>
+                        </div>
+                        <div class="cart_item-price">
+                            <h4 class="item-price">$ 25.00</h4>
+                        </div>
+                        <div class="cart_item-remove">
+                            <button class="cart_delete-btn"><i class="fa-solid fa-trash"></i></i></button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="cart_container-right">
+                <h2>SUMMARY</h2>
+                <div class="cart_right-item">
+                    <h3 class="items-count">Items: </h3>
+                </div>
+                <div class="cart_right-shipping">
+                    <h3>Shipping</h3>
+                    <p>Free Shipping</p>
+                </div>
+                <div class="cart_right-coupon">
+                    <h3>Promo Code</h3>
+                    <input type="text" placeholder="Code">
+                </div>
+                <div class="cart_right-totalprice">
+                    <h2>Total Price </h2>
+                    <h3 class="cart_total-price"></h3>
+                </div>
+                <a class="cart_right-checkout">Checkout</a>
+            </div>
+        </div>    
+    </section>
+
+    <div id="emptyCartImage" class="cart_empty-image">
+        <div class="empty-image">
+            <img src="https://www.zoe.menu/assets/images/empty_cart.gif" alt="Empty Cart Image">
+        </div>
+        <div class="cart_back-btn">
+            <button>Go Shopping</button>
+        </div>
+    </div>
+    
+    
+    <script src="../script/cart.js" defer></script>
 </body>
 </html>

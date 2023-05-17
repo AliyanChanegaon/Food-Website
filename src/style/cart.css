@@ -1,0 +1,206 @@
+.cart_section {
+    margin-top: 5rem;
+}
+
+.cart_section > h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cart_container {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 60% 35%;
+    gap: 5%;
+}
+
+/* -------------Cart_container-left------------------ */
+
+.cart_container-left {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+
+.cart_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.cart_item-image {
+    width: 5rem;
+}
+
+.cart_item-image img {
+    width: 100%;
+}
+
+.cart_item-details > h4{
+    color: gray;
+    font-size: 1rem;
+}
+
+.cart_item-quantity > input {
+    width: 3rem;
+    margin: 0 .2rem;
+    text-align: center;
+    padding: .1rem 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.cart_quantity-btn {
+    padding: .2rem .5rem;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+.cart_quantity-btn:hover {
+    box-shadow: rgba(239, 239, 246, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;    
+}
+
+.cart_item-remove button{
+    border: none;
+    cursor: pointer;
+}
+
+i {
+    color: black;
+    transition: .2s ease;
+}
+
+i:hover {
+    color: red;
+}
+
+
+/* ---------------Cart_container-right------------ */
+
+.cart_container-right {
+    display: grid;
+    max-height: 20rem;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;    
+    background-color: rgb(188, 182, 182);
+    min-height: 20rem;
+}
+
+.cart_container-right > h2{
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
+}
+
+.cart_right-item,
+.cart_right-shipping,
+.cart_right-totalprice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart_right-coupon {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.cart_right-coupon input {
+    background-color: rgb(188, 182, 182);
+    padding: .3rem .5rem;
+    border: 1px solid white;
+    outline: none;
+}
+
+.cart_right-coupon h3 {
+    margin-bottom: .5rem;
+}
+
+.cart_container-right > a {
+    text-align: center;
+    padding: .5rem 1rem;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: .3s ease-in;
+}
+
+.cart_container-right > a:hover {
+    box-shadow: rgba(239, 239, 246, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+/* -------------Cart-Empty-Image--------------- */
+
+.cart_empty-image {
+    margin-top: 6rem;
+    grid-template-columns: 1fr;
+    gap: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart_back-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart_back-btn > button {
+    padding: .5rem 1rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    transition: .3s ease-in-out;
+}
+
+.cart_back-btn > button:hover {
+    box-shadow: rgba(239, 239, 246, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+
+/* ----------------------------------Media Queries----------------------------------- */
+
+/*---------- Tablet-Screen--------- */
+@media screen and (max-width: 1024px) {
+    .cart_container {
+        width: 80%;
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/*--------- mobile-Screen----------- */
+@media screen and (max-width: 600px) {
+    .cart_container {
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+
+    .cart_item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
