@@ -28,12 +28,12 @@ function startSlider() {
         if (heroSlider.classList.contains("fade-in")) {
           heroSlider.classList.remove("fade-in");
         }
-        setTimeout(function () {
+        // setTimeout(function () {
           heroSlider.classList.add("fade-in");
           heroSlider.style.backgroundImage = `url(${arr[i]})`;
-        }, 10); // Adjust the delay time as needed
+        // }, 10); // Adjust the delay time as needed
         
-        console.log(`heroSlider.style.backgroundImage = url(${arr[i]})`);
+        console.log(i);
         i++;
       }, 3000);
 }
