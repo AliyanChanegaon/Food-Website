@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
 *{
 	padding:0; 
 	margin:0; 
@@ -117,11 +118,12 @@ nav >ul >img{
 .parent{
 	width: 100vw;
 	min-height: 100vh;
-	background: #34495e;
+	background: #bdc2c6;
 	font-size: 1.2rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	
 }
 .container{
 	background: white;
@@ -131,6 +133,9 @@ nav >ul >img{
 	justify-content:space-between;
 	align-items: flex-start;
 	padding: 0.5rem 1.5rem;
+	border-radius: 20px;
+	
+	
 }
 .left{
 	flex-basis: 50%;
