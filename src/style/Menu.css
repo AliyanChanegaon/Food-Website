@@ -100,8 +100,10 @@
   /* 2nd Section */
 
   .main{
+  
     width: 100%;
     height: 100%;
+    margin-bottom: 40px;
   }
 
   .main .filters{
@@ -125,10 +127,14 @@
   }
 
 
-  .container >div{
+  .container{
+   
     width: 100%;
+    max-width: 1000px;
     margin: auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    
     gap: 20px;
     justify-content: center;
     margin-bottom: 20px;
