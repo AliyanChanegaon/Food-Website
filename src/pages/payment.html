@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Payment gateway- Food website</title>
+	<link rel="stylesheet" type="text/css" href="../style/payment_n_about.css">
+    <link rel="stylesheet" href="../style/navbar.css">
+</head>
+<body>
+<!-- Navigation bar Starts here -->
+   <!-- Home page top section  -->
+   <div class="navbar" id="navBar">
+    <nav>
+           
+       
+                    
+                      <img id="Logo" src="../img/logo.png" alt="">
+                    
+          
+     
+    
+                    <div class="navPages">
+                         <a href="./Home.html">HOME</a>
+                         <a href="./Menu.html">MENU</a>
+                         <a href="./login.html">LOGIN</a>
+                         <a href="./sign-up.html">SIGN UP</a>
+    
+    
+                    </div>
+                    <div>
+                    </div>
+                    <div>
+                    </div>
+    
+    
+    
+                    <div>
+    
+                    <a id="cart" href="./cart.html" ><i class="fa-solid fa-cart-plus"></i> </a>
+    
+                    </div>
+      
+           
+    </nav>
+ </div>
+
+	<!-- Navigation bar ends here -->
+
+<div class="parent">
+	<div class="container">
+		<div class="left">
+			<h3>BILLING ADDRESS</h3>
+			<form action="" method="POST">
+				<label for="name">Full name</label>
+				<input type="text" name="name" id="name" value="" placeholder="Enter name" required />
+				<label for="email">E-mail</label>
+				<input type="email" name="email" id="email" value="" placeholder="Enter email" required />
+				<label for="address">Address</label>
+				<input type="text" name="address" id="address" value="" placeholder="Enter address" required />
+				<label for="city">City</label>
+				<input type="text" name="city" id="city" value="" placeholder="Enter City" required />
+				<div id="zip">
+					<label for="state">
+						State
+						<select name="state" required>
+							<option value="">Choose State..</option>
+							<option value="AndhraPradesh">Andhra Pradesh</option>
+							<option value="Kerala">Kerala</option>
+							<option value="Maharashtra">Maharashtra</option>
+							<option value="MadhyaPradesh">Madhya Pradesh</option>
+						</select>
+					</label>
+						<label for="zipcode">
+						Zip code
+						<input type="number" name="zipcode" id="zipcode" value="" placeholder="Zip code" required />
+					</label>
+				</div>
+		</div>
+		<div class="right">
+			<h3>PAYMENT</h3>
+				Accepted Card <br>
+				<img src="../img/card1.png" width="100px" alt="img1">
+				<img src="../img/card2.png" width="50px" alt="img2">
+				<br><br>
+
+				<label for="CreditCardNumber">Credit card number</label>
+				<input type="text" name="CreditCardNumber" id="CreditCardNumber" placeholder="Enter card number" required>
+				
+				<label for="ExpMonth">Exp month</label>
+				<input type="text" name="ExpMonth" id="ExpMonth" placeholder="Enter Month" required>
+				<div id="zip">
+					<label for="ExpYear">
+						Exp year
+						<select name="ExpYear" id="ExpYear" required>
+							<option value="">Choose Year..</option>
+							<option value="2022">2022</option>
+							<option value="2023">2023</option>
+							<option value="2024">2024</option>
+							<option value="2025">2025</option>
+							<option value="2026">2027</option>
+							<option value="2027">2027</option>
+						</select>
+					</label>
+					<label for="cvv">
+					CVV
+					<input type="number" name="cvv" id="cvv" value="" name="" placeholder="CVV" required>
+					</label>
+				</div>
+			<input type="submit" name="submit" value="Proceed to Checkout">
+		</div>
+	</div>
+</form>
+</div>
+</body>
+</html>
