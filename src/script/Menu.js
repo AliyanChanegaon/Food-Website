@@ -4,132 +4,202 @@ document.querySelector("#Footer").innerHTML = footer();
 
 document.querySelector("#navBar").innerHTML = navbar();
 
-let container= document.querySelector('.container');
-const allProduct=document.querySelector('.filters >div:nth-child(1)');
-const Starters=document.querySelector('.filters >div:nth-child(2)');
-const Mains=document.querySelector('.filters >div:nth-child(3)');
-const Dessert=document.querySelector('.filters >div:nth-child(4)');
+let container = document.querySelector(".container");
+const allProduct = document.querySelector(".filters >div:nth-child(1)");
+const Starters = document.querySelector(".filters >div:nth-child(2)");
+const Mains = document.querySelector(".filters >div:nth-child(3)");
+const Dessert = document.querySelector(".filters >div:nth-child(4)");
+let button;
 
 let arr = [
   {
-    type:"Starters",
+    id:1,
+    type: "starters",
     img: "../img/starter1.jpg",
     text: "Panner Tikka",
-    category:["Crispy","Spicy","India"],
-    price:"80",
-    
+    category: ["Crispy", "Spicy", "India"],
+    price: "80",
   },
   {
-    type:"Starters",
+    id:2,
+    type: "starters",
     img: "../img/starter2.jpg",
     text: "Malai Kofta",
-    category:["Soft","Sweet","India"],
-    price:"90",
-    
+    category: ["Soft", "Sweet", "India"],
+    price: "90",
   },
   {
-    type:"Starters",
+    id:3,
+    type: "starters",
     img: "../img/starter3.jpg",
     text: "Fish Fry",
-    category:["Fresh","Spicy","India"],
-    price:"110",
-    
+    category: ["Fresh", "Spicy", "India"],
+    price: "110",
   },
   {
-    type:"Mains",
+    id:4,
+    type: "mains",
     img: "../img/maincourse1.jpg",
     text: "Butter Chicken",
-    category:["Fresh","Medium","India"],
-    price:"140",
-    
+    category: ["Fresh", "Medium", "India"],
+    price: "140",
   },
   {
-    type:"Mains",
+    id:5,
+    type: "mains",
     img: "../img/maincourse2.jpg",
     text: "Biryani",
-    category:["Fresh","Spicy","India"],
-    price:"150",
-    
+    category: ["Fresh", "Spicy", "India"],
+    price: "150",
   },
   {
-    type:"Mains",
+    
+    id:6,
+    type: "mains",
     img: "../img/maincourse3.jpg",
     text: "Palak Paneer",
-    category:["Fresh","Sweet","India"],
-    price:"120",
+    category: ["Fresh", "Sweet", "India"],
+    price: "120",
     
   },
   {
-    type:"Dessert",
+    id:7,
+    type: "dessert",
     img: "../img/Dessert1.jpg",
     text: "Ice Cream",
-    category:["Fresh","Sweet","India"],
-    price:"40",
-    
+    category: ["Fresh", "Sweet", "India"],
+    price: "40",
   },
   {
-    type:"Dessert",
+    id:8,
+    type: "dessert",
     img: "../img/Dessert2.jpg",
     text: "Pastry",
-    category:["Fresh","Sweet","India"],
-    price:"80",
-    
+    category: ["Fresh", "Sweet", "India"],
+    price: "80",
   },
   {
-    type:"Dessert",
+    id:9,
+    type: "dessert",
     img: "../img/Dessert3.jpg",
     text: "Milk Shake",
-    category:["Fresh","Sweet","India"],
-    price:"50",
-    
+    category: ["Fresh", "Sweet", "India"],
+    price: "50",
   },
 ];
 
+let localArr = [];
 
 Starters.addEventListener("click", selectRole);
 allProduct.addEventListener("click", selectRole);
 Mains.addEventListener("click", selectRole);
 Dessert.addEventListener("click", selectRole);
 
-
-function selectRole  (e){
-  
-
-  filteredRole(this.innerText)
+function selectRole(e) {
+  // console.log(this.innerText);
+  let abc=this.innerText;
+   filteredRole(abc);
 }
 
-
-
 function filteredRole(type) {
-  type=type.toLowerCase();
-  if(type==="all products"){
+  type = type.toLowerCase();
+  
+  if (type === "all products") {
     return displayData(arr);
   }
   let filterArr = arr.filter(function (el) {
-  
-    return el.type.toLowerCase() == type;
+    return el.type == type;
   });
 
+  
   displayData(filterArr);
 }
 
-const displayData= (arr)=>{
+const displayData = (arr) => {
   container.innerHTML="";
-    arr.forEach((ele,index)=>{
-      
-     
-        container.innerHTML+=
-        `<div class="box fade-in">
-        <img src=${ele.img} alt="">
-        <h1>${ele.text}</h1>
-        <span>${ele.category[0]} <span>.</span> <span>${ele.category[1]}</span><span>.</span>${ele.category[2]}</span>
-        <div>₹${ele.price}</div>
-         <div id="buy-hover"> <span> <i class="fa-solid fa-cart-shopping" style="color: #1b1b1b;"></i></span></div> 
-      </div>`;
+ 
+  arr.forEach((ele, index) => {
+    let div_box=document.createElement('div');
+    div_box.setAttribute("class","box fade-in")
+   
 
-     
+        //  .setAttribute("class","box fade-in");
+    
+    
 
-    })
+    let img=document.createElement('img')
+    img.src=ele.img;
+
+    let h1 = document.createElement('h1');
+    h1.innerText=`${ele.text}`;
+
+    let main_span= document.createElement('span');
+    main_span.innerHTML= `${ele.category[0]} <span>.</span> <span>${ele.category[1]}</span><span>.</span>${ele.category[2]}`;
+
+    let div_price=document.createElement('div');
+    div_price.innerHTML=`₹${ele.price}`;
+
+    let button=document.createElement('button');
+    button.innerHTML=`<span> <i class="fa-solid fa-cart-shopping ${index}" style="color: #1b1b1b;"></i></span>`
+    button.setAttribute("class","buy-hover");
+    button.setAttribute("id",`button-${index}`);
+    button.addEventListener("click",function(){
+          addToCart(ele,index);
+    });
+    
+
+     //  <button id="buy-hover" class=${index} "> <span> <i class="fa-solid fa-cart-shopping" style="color: #1b1b1b;"></i></span></button> 
+ 
+
+
+    container.append(div_box);
+    div_box.append(img,h1,main_span,div_price,button);
+
+    // console.log( container.innerHTML);
+
+  //  div_box.append(img)
+    
+    // container.innerHTML += 
+
+    // `<div class="box fade-in">
+    //     <img src=${ele.img} alt="">
+    //     <h1>${ele.text}</h1>
+    //     <span>${ele.category[0]} <span>.</span> <span>${ele.category[1]}</span><span>.</span>${ele.category[2]}</span>
+    //     <div>₹${ele.price}</div>
+        
+    //   </div>`;
+
+      });
+};
+
+let quantity;
+
+function addToCart(ele,index) {
+  var span = document.querySelector(`#button-${index} >span >i`);
+  span.parentNode.removeChild(span);
+  document.querySelector(`#button-${index} >span`).innerHTML+=`<i class="fa-solid fa-check" style="color: #1b1b1b;"></i>`
+  console.log(document.querySelector(`#button-${index} >span >i`));
+  console.log(index);
+  ele.quantity=1;
+
+  document.querySelector(`#button-${index}`).style.backgroundColor="rgb(148,218,106)";
+
+  if (localArr.indexOf(ele) != -1) {
+    alert("Already added");
+    //  console.log(cartData.indexOf(data));
+    return;
+  }
+
+  alert("Added To Cart");
+
+  
+ localArr.push(ele);
+
+
+  localStorage.setItem("EmployeeData", JSON.stringify(localArr));
+
+
+  console.log(localArr);
 }
 
-displayData(arr);
+displayData(arr)
