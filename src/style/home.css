@@ -42,7 +42,7 @@
 
 /* Home page top section */
 .home-top-section {
-  background-image: url("../img/banenr-img1.jpg");
+  /* background-image: url("../img/banenr-img1.jpg"); */
 
   background-color: rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
@@ -54,6 +54,7 @@
   opacity: 1;
   visibility: inherit;
   position: relative;
+  z-index: 22;
 }
 
 
@@ -210,6 +211,7 @@ color:
   padding: 7px 16px;
   display: inline-block;
   cursor: pointer;
+  transition: all 0.5s ease-out;
 }
 
 .service-cards > .box > div > button:hover {
@@ -263,6 +265,7 @@ color:
   color: #5d5d5d;
   text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.5s ease-out;
 }
 
 .quotesection > .quotesection-content >button:hover{
@@ -595,10 +598,6 @@ color:
 }
 
 
-/* #Newsletterbutton:hover{
-  background-color: var(--main-bg-color);
-  color: var(--third-color);
-} */
 
 
 
@@ -625,11 +624,18 @@ color:
 
 #Newsletterbutton{
  border: none;
+ color: #dbdbdb;
  background-color: var(--third-color);
   /* border: 2px solid red; */
   width: 44px;
   height: 42px;
   cursor: pointer;
+  
+}
+
+#Newsletterbutton:hover{
+  background-color: #444444;
+  transition: all 0.5s ease-out;
 }
 
 #newsletter-input{
