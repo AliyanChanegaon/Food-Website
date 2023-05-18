@@ -42,7 +42,7 @@
 
 /* Home page top section */
 .home-top-section {
-  background-image: url("../img/banenr-img1.jpg");
+  /* background-image: url("../img/banenr-img1.jpg"); */
 
   background-color: rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
@@ -54,6 +54,7 @@
   opacity: 1;
   visibility: inherit;
   position: relative;
+  z-index: 22;
 }
 
 
