@@ -86,34 +86,50 @@ let arr = [
 ];
 
 
-Starters.addEventListener("click", filteredRole);
+Starters.addEventListener("click", selectRole);
+allProduct.addEventListener("click", selectRole);
+Mains.addEventListener("click", selectRole);
+Dessert.addEventListener("click", selectRole);
 
+
+function selectRole  (e){
+  
+
+  filteredRole(this.innerText)
+}
 
 
 
 function filteredRole(type) {
- 
+  type=type.toLowerCase();
+  if(type==="all products"){
+    return displayData(arr);
+  }
   let filterArr = arr.filter(function (el) {
-    return el.type == type;
+  
+    return el.type.toLowerCase() == type;
   });
 
   displayData(filterArr);
 }
 
-const displayData= ()=>{
+const displayData= (arr)=>{
+  container.innerHTML="";
     arr.forEach((ele,index)=>{
+      
+     
         container.innerHTML+=
-        `<div class="box">
+        `<div class="box fade-in">
         <img src=${ele.img} alt="">
         <h1>${ele.text}</h1>
         <span>${ele.category[0]} <span>.</span> <span>${ele.category[1]}</span><span>.</span>${ele.category[2]}</span>
         <div>₹${ele.price}</div>
-        <!-- <div id="buy-hover">Add to Cart</div> -->
+         <div id="buy-hover"> <span> <i class="fa-solid fa-cart-shopping" style="color: #1b1b1b;"></i></span></div> 
       </div>`;
 
-      
+     
 
     })
 }
 
-displayData();
+displayData(arr);
