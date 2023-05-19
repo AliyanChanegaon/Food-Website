@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,700&family=Tangerine:wght@400;700&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
 .cart_section {
     margin-top: 5rem;
 }
@@ -20,6 +26,7 @@
 .cart_container-left {
     display: grid;
     grid-template-columns: 1fr;
+    font-size: .8rem;
 }
 
 
@@ -72,29 +79,24 @@
 .cart_item-remove button{
     border: none;
     cursor: pointer;
+    background: red;
+    color: white;
+    padding: .2rem .4rem;
+    border-radius: 2rem;
 }
-
-i {
-    color: black;
-    transition: .2s ease;
-}
-
-i:hover {
-    color: red;
-}
-
 
 /* ---------------Cart_container-right------------ */
 
 .cart_container-right {
     display: grid;
-    max-height: 20rem;
+    max-height: 27rem;
     grid-template-columns: 1fr;
     align-items: center;
-    padding: 1rem;
+    padding: 0 2rem;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;    
-    background-color: rgb(188, 182, 182);
-    min-height: 20rem;
+    background-color: var(--second-color);
+    font-size: .8rem;
+    min-height: 27rem;
 }
 
 .cart_container-right > h2{
@@ -120,10 +122,15 @@ i:hover {
 }
 
 .cart_right-coupon input {
-    background-color: rgb(188, 182, 182);
+    background-color: transparent;
     padding: .3rem .5rem;
     border: 1px solid white;
+    color: aliceblue;
     outline: none;
+}
+
+.cart_right-coupon input::placeholder {
+    color: white;
 }
 
 .cart_right-coupon h3 {
@@ -133,7 +140,7 @@ i:hover {
 .cart_container-right > a {
     text-align: center;
     padding: .5rem 1rem;
-    background-color: black;
+    background-color: var(--third-color);
     color: white;
     cursor: pointer;
     transition: .3s ease-in;

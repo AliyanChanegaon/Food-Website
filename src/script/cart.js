@@ -1,11 +1,75 @@
+import { footer } from "../components/common.js";
 
+// Add Items to cart Functionality
+
+var cartItemContainer = [
+    {
+        type: "Starter",
+        img: "../img/starter1.jpg",
+        text: "Paneer Tikka",
+        category: ["Crispy", "Spicy"],
+        price: 80
+    },
+
+    {
+        type: "Main",
+        img: "../img/starter2.jpg",
+        text: "Malai Kofta",
+        category: ["Soft"],
+        price: 80
+    },
+
+]
+
+var mainContainer = document.getElementById("cart_left-container");
+
+// Loop through the cartItemContainer array
+for (var i = 0; i < cartItemContainer.length; i++) {
+    var item = cartItemContainer[i];
+
+    // Create a new article element
+    var article = document.createElement("article");
+    article.className = "cart_item";
+
+    // Create the HTML structure inside the article element
+    article.innerHTML = `
+        <div class="cart_item-image">
+            <img src="${item.img}" alt="">
+        </div>
+        <div class="cart_item-details">
+            <h4>${item.type}</h4>
+            <p>${item.text}</p>
+            <p>${item.category.map(cat => {
+                return document.createElement("p").innerHTML=cat
+            })}</p>
+        </div>
+        <div class="cart_item-quantity">
+            <button class="cart_quantity-btn minus">-</button>
+            <input type="text" value="1" readonly class="item-quantity">
+            <button class="cart_quantity-btn plus">+</button>
+        </div>
+        <div class="cart_item-price">
+            <h4 class="item-price">$ ${item.price.toFixed(2)}</h4>
+        </div>
+        <div class="cart_item-remove">
+            <button class="cart_delete-btn">remove</i></button>
+        </div>
+    `;
+
+    // Append the article element to the container
+    mainContainer.append(article);
+}
+
+
+
+// Cart item remove Functionality
 var removeCartItems = document.getElementsByClassName('cart_delete-btn');
 
 for (var i = 0; i < removeCartItems.length; i++) {
     var button = removeCartItems[i];
     button.addEventListener('click', (e) => {
     var buttonClicked = e.target;
-    buttonClicked.parentElement.parentElement.parentElement.remove();
+    buttonClicked.parentElement.parentElement.remove();
         updateItemsCount();
         cartTotal()
     });
@@ -65,7 +129,7 @@ cartTotal()
     //Quantity Plus and Minus Functionality 
 const plusButtons = document.querySelectorAll('.cart_quantity-btn.plus');
 const minusButtons = document.querySelectorAll('.cart_quantity-btn.minus');
-itemsCount = document.getElementsByClassName('item-quantity').length
+var itemsCount = document.getElementsByClassName('item-quantity').length
 
 
 plusButtons.forEach(button => {
@@ -90,3 +154,4 @@ minusButtons.forEach(button => {
     });
 });
 
+document.querySelector("#Footer").innerHTML =  footer();
