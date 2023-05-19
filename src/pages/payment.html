@@ -71,10 +71,20 @@
 					<input type="number" name="cvv" id="cvv" value="" name="" placeholder="CVV" required>
 					</label>
 				</div>
-			<input type="submit" name="submit" value="Proceed to Checkout">
+			<input type="submit" name="submit" value="Proceed to Checkout" id="checkout" onclick="myFunction()">
 		</div>
 	</div>
 </form>
 </div>
+<script>
+	function myFunction() {
+  let text = "Purchased Successfully!\nClick OK to Explore more...";
+  if (confirm(text) == true) {
+    location.href = "Home.html";
+  } else {
+    text = "You canceled!";
+  }
+}
+</script>
 </body>
 </html>
