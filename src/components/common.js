@@ -34,7 +34,7 @@ function navbar() {
   <div>
 
   <a id="cart" href="./cart.html" ><i class="fa-solid fa-cart-plus fa-lg"></i> </a>
-
+  <span id="cart-quantity"></span>
   </div>
 
   </nav>
