@@ -99,6 +99,7 @@ display: none;
 @media all and (min-width: 320px) and (max-width: 767px) {
 
 
+
   #navBar >nav{
         /* border: 2px solid red; */
         position: relative;
@@ -158,6 +159,12 @@ display: none;
     
   }
 
+
+  #cart-quantity{
+    position: absolute;
+    right: 16%;
+    top: 25%;
+  }
    
   .active >a{
     position: relative;

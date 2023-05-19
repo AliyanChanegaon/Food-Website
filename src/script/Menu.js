@@ -161,8 +161,9 @@ function addToCart(ele, index) {
 
     return;
   }
-
+ 
   alert("Added To Cart");
+  
 
   cartData.push(ele);
   localStorage.setItem("cartData", JSON.stringify(cartData));
