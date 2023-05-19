@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+*{
+	padding:0; 
+	margin:0; 
+	box-sizing: border-box; 
+	font-family:sans-serif;
+}
+/* Navbar stylings */
+nav >ul{
+   
+    display: flex;
+    flex-direction: about-row;
+    gap: 20PX;
+}
+nav >ul >li{
+  list-style: none;
+  cursor:pointer;
+}
+
+
+nav >ul >img{
+    width: 30px;
+}
+
+/* Navbar styling ends */
+
+/* About page styling begins */
+
+
+  .about-row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 2em 1em;
+	text-align: center;
+  }
+  .about-column {
+	width: 100%;
+	padding: 0.5em 0;
+  }
+  h1 {
+	width: 100%;
+	text-align: center;
+	font-size: 3.5em;
+	color: #1f003b;
+  }
+  .about-card {
+	box-shadow: 0 0 2.4em rgba(25, 0, 58, 0.1);
+	padding: 3.5em 1em;
+	border-radius: 0.6em;
+	color: #1f003b;
+	cursor: pointer;
+	transition: 0.3s;
+	background-color: #ffffff;
+  }
+  .about-card .img-container {
+	width: 8em;
+	height: 8em;
+	/* background-color: #a993ff; */
+	padding: 0.5em;
+	border-radius: 50%;
+	margin: 0 auto 2em auto;
+  }
+  .about-card img {
+	width: 100%;
+	border-radius: 50%;
+  }
+  .about-card h3 {
+	font-weight: 500;
+  }
+  .about-card p {
+	font-weight: 300;
+	text-transform: uppercase;
+	margin: 0.5em 0 2em 0;
+	letter-spacing: 2px;
+  }
+  .icons {
+	width: 50%;
+	min-width: 180px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+  }
+  .about-card a {
+	text-decoration: none;
+	color: inherit;
+	font-size: 1.4em;
+  }
+  .about-card:hover {
+	background: linear-gradient(#6045ea, #8567f7);
+	color: #ffffff;
+  }
+  .about-card:hover .img-container {
+	transform: scale(1.15);
+  }
+  @media screen and (min-width: 768px) {
+	section {
+	  padding: 1em 7em;
+	}
+  }
+  @media screen and (min-width: 992px) {
+	section {
+	  padding: 1em;
+	}
+	.about-card {
+	  padding: 5em 1em;
+	}
+	.about-column {
+	  flex: 0 0 33.33%;
+	  max-width: 33.33%;
+	  padding: 0 1em;
+	}
+  }
+
+
+/* About page styling ends */
+
+/* Billing page styling begins */
+.parent{
+	width: 100vw;
+	min-height: 100vh;
+	background: #bdc2c6;
+	font-size: 1.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.container{
+	background: white;
+	max-width: 800px;
+	min-height: 500px;
+	display: flex;
+	justify-content:space-between;
+	align-items: flex-start;
+	padding: 0.5rem 1.5rem;
+	border-radius: 20px;
+	
+	
+}
+.left{
+	flex-basis: 50%;
+}
+.right{
+	flex-basis: 50%;
+}
+form{
+	padding: 1rem;
+}
+label{
+	padding-bottom: 0.1rem;
+}
+
+h3{
+	margin-top: 1rem;
+	color:#2c3e50;
+	}
+
+input[type="text"],input[type="email"]{
+	width: 100%;
+	padding: 0.5rem 0.7rem;
+	margin: 0.5rem 0;
+	outline: none;
+}
+
+#zip{
+	display: flex;
+	margin-top: 0.5rem;
+}
+#zip select{
+	padding: 0.5rem 0.7rem;
+}
+#zip input[type="number"]{
+	padding: 0.5rem 0.7rem;
+	margin-left: 5px;	
+}
+input[type="submit"]{
+	width: 100%;
+	padding: 0.7rem 1.5rem;
+	background: #34495e;
+	color: white;
+	border: none;
+	outline: none;
+	margin-top: 1rem;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover{
+	background: #2c3e50;
+}
+
+
+@media only screen and (max-width: 770px){
+	body{
+		padding: 20px;
+	}
+	.container{
+		flex-direction: column;
+	}
+	body{
+		overflow-x: hidden;
+	}
+}
+
+/* Billing page styling ends */
+
