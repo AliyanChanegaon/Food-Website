@@ -228,13 +228,7 @@
    
   }
   
-  .main .filters >div{
-    padding: 5px;
-    background-color: var(--third-color);
-    color: var(--main-bg-color);
-   border-radius: 5px;
-    
-  }
+
 
   
   .container {
