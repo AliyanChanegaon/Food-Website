@@ -1,8 +1,8 @@
 
 // Get the navbar element
-let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
-const cartQuantity = document.querySelector("#cart-quantity");
-cartQuantity.innerText = cartData.length;
+// let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+// const cartQuantity = document.querySelector("#cart-quantity");
+// cartQuantity.innerText = cartData.length;
 
 
 const navbar = document.querySelector(".navbar");
