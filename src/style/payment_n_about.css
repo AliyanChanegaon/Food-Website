@@ -74,8 +74,8 @@ nav >ul >img{
 	letter-spacing: 2px;
   }
   .icons {
-	width: 50%;
-	min-width: 180px;
+	width: 25%;
+	min-width: 90px;
 	margin: auto;
 	display: flex;
 	justify-content: space-between;
