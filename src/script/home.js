@@ -1,4 +1,3 @@
-
 import { footer, navbar } from "../components/common.js";
 
 let arr = [
