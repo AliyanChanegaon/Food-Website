@@ -1,6 +1,8 @@
 .Footer{
     height: 150px;
-    background-color: var(--third-color);
+    background: rgb(87, 29, 8);
+    border-top: 2px solid white;
+   
     font-weight: 200;
     font-size: small;
     color: var(--main-bg-color);

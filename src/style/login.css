@@ -14,10 +14,12 @@ input {
 }
 
 main {
+ 
   width: 100%;
-  min-height: 100vh;
+  min-height:100vh;
   overflow: hidden;
-  background: #bdc2c6;
+  background: rgb(179,89,55);
+background: linear-gradient(163deg, rgba(179,89,55,1) 13%, rgba(112,35,13,1) 32%, rgba(150,70,42,1) 64%, rgba(128,44,17,1) 80%, rgba(79,24,9,1) 100%);
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -25,13 +27,14 @@ main {
 }
 
 .box {
+  margin-top: 40px;
   position: relative;
   width: 100%;
   max-width: 1020px;
-  height: 640px;
+  height: 570px;
   background-color: #fff;
-  border-radius: 3.3rem;
-  box-shadow: 7px 7px 10px #424345, -7px -7px 10px rgb(107, 104, 104);
+  border-radius: 1.2rem;
+  /* box-shadow: 7px 7px 10px #424345, -7px -7px 10px rgb(107, 104, 104); */
 }
 
 .inner-box {
@@ -56,7 +59,7 @@ main {
 }
 
 form {
-  max-width: 260px;
+  max-width: 350px;
   width: 100%;
   margin: 0 auto;
   height: 100%;
@@ -73,13 +76,15 @@ form.sign-up-form {
   pointer-events: none;
 }
 
+
 .logo {
   display: flex;
   align-items: center;
+  width: 200px;
 }
 
 .logo img {
-  width: 50px;
+width: 100%;
   margin-right: 0.3rem;
 }
 
@@ -388,6 +393,36 @@ main.sign-up-mode .carousel {
   }
 
   form {
-    padding: 1rem 2rem 1.5rem;
+    padding: 10px ;
+    height: 638px;
+    justify-content: start;
   }
+  .box{
+    border-radius:23px;
+  }
+  
+/*  */
+
+/* .logo{
+  width: 110px;
+}
+  .heading h2{
+    font-size: 1.5rem;
+  }
+
+  .heading{
+    margin: 0;
+  }
+  .input-wrap{
+margin-bottom: 1rem;
+  }
+  .sign-btn{
+    margin-bottom: 5px;
+  }
+  .box{
+    border-radius:15px;
+  } */
+  /* .inner-box{
+    border: 2px;
+  } */
 }
