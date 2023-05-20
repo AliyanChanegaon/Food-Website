@@ -8,6 +8,7 @@ let arr = [
     text: "Panner Tikka",
     category: ["Crispy", "Spicy", "India"],
     price: "80",
+    quantity: 1,
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ let arr = [
     text: "Malai Kofta",
     category: ["Soft", "Sweet", "India"],
     price: "90",
+    quantity: 1,
   },
   {
     id: 3,
@@ -24,6 +26,7 @@ let arr = [
     text: "Fish Fry",
     category: ["Fresh", "Spicy", "India"],
     price: "110",
+    quantity: 1,
   },
   {
     id: 4,
@@ -32,6 +35,7 @@ let arr = [
     text: "Butter Chicken",
     category: ["Fresh", "Medium", "India"],
     price: "140",
+    quantity: 1,
   },
   {
     id: 5,
@@ -40,6 +44,7 @@ let arr = [
     text: "Biryani",
     category: ["Fresh", "Spicy", "India"],
     price: "150",
+    quantity: 1,
   },
   {
     id: 6,
@@ -48,6 +53,7 @@ let arr = [
     text: "Palak Paneer",
     category: ["Fresh", "Sweet", "India"],
     price: "120",
+    quantity: 1,
   },
   {
     id: 7,
@@ -56,6 +62,7 @@ let arr = [
     text: "Ice Cream",
     category: ["Fresh", "Sweet", "India"],
     price: "40",
+    quantity: 1,
   },
   {
     id: 8,
@@ -64,6 +71,7 @@ let arr = [
     text: "Pastry",
     category: ["Fresh", "Sweet", "India"],
     price: "80",
+    quantity: 1,
   },
   {
     id: 9,
@@ -72,12 +80,11 @@ let arr = [
     text: "Milk Shake",
     category: ["Fresh", "Sweet", "India"],
     price: "50",
+    quantity: 1,
   },
 ];
 
 let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
-
-
 
 document.querySelector("#Footer").innerHTML = footer();
 document.querySelector("#navBar").innerHTML = navbar();
@@ -131,9 +138,18 @@ const displayData = (arr) => {
     div_price.innerHTML = `₹${ele.price}`;
 
     let button = document.createElement("button");
-    button.innerHTML = `<span> <i class="fa-solid fa-cart-shopping ${index}" style="color: #1b1b1b;"></i></span>`;
     button.setAttribute("class", "buy-hover");
     button.setAttribute("id", `button-${index}`);
+
+    const isExist = checkIsExist(ele);
+    if (isExist) {
+      button.innerHTML = `<span> <i class="fa-solid fa-check" style="color: #1b1b1b;"></i></span>`;
+      button.style.backgroundColor = "rgb(148,218,106)";
+    } else {
+      button.innerHTML = `<span> <i class="fa-solid fa-cart-shopping ${index}" style="color: #1b1b1b;"></i></span>`;
+    }
+
+   
     button.addEventListener("click", function () {
       addToCart(ele, index);
     });
@@ -149,9 +165,8 @@ function addToCart(ele, index) {
   document.querySelector(
     `#button-${index} >span`
   ).innerHTML += `<i class="fa-solid fa-check" style="color: #1b1b1b;"></i>`;
-  console.log(document.querySelector(`#button-${index} >span >i`));
-  console.log(index);
-  ele.quantity = 1;
+  // console.log(document.querySelector(`#button-${index} >span >i`));
+  // console.log(index);
 
   document.querySelector(`#button-${index}`).style.backgroundColor =
     "rgb(148,218,106)";
@@ -161,9 +176,8 @@ function addToCart(ele, index) {
 
     return;
   }
- 
+
   alert("Added To Cart");
-  
 
   cartData.push(ele);
   localStorage.setItem("cartData", JSON.stringify(cartData));
@@ -172,3 +186,9 @@ function addToCart(ele, index) {
 
 cartQuantity.innerText = cartData.length;
 displayData(arr);
+
+function checkIsExist(product) {
+  // console.log(cartData.find((el) => el.id == product.id));
+  return cartData.find((el) => el.id == product.id);
+  // return cartData.some((el)=> el.id == product.id)
+}
