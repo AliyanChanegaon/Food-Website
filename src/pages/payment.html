@@ -74,13 +74,17 @@
 					<input type="number" name="cvv" id="cvv" value="" name="" placeholder="CVV" required>
 					</label>
 				</div>
+
 				<span>$1200</span>
+
+				<span id="Final_price"></span>
+				
+
 			<input type="submit" name="submit" value="Proceed to Checkout" id="checkout" onclick="myFunction()">
 		</div>
 	</div>
 </form>
 </div>
-
 <section id="Footer"></section>
 
 <!-- <script src="../script/navbar.js"></script> -->
@@ -89,13 +93,18 @@
  </html>
  <script src="../script/navbar.js"></script>
 
- <script type="module">
 	
+<script type="module">
 	import { footer, navbar } from "../components/common.js";
 
 document.querySelector("#Footer").innerHTML = footer();
 document.querySelector("#navBar").innerHTML = navbar();
 
+	let cartData = JSON.parse(localStorage.getItem("Finalprice"));
+	let Final_price = document.getElementById("Final_price");
+	window.addEventListener("load", (event) => {
+		Final_price.innerText = cartData.Finalprice;
+	});
 	function myFunction() {
   let text = "Purchased Successfully!\nClick OK to Explore more...";
   if (confirm(text) == true) {
@@ -104,4 +113,5 @@ document.querySelector("#navBar").innerHTML = navbar();
     text = "You canceled!";
   }
 }
+
 </script>
