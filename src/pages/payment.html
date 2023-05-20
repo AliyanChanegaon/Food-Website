@@ -5,11 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Payment gateway- Food website</title>
 	<link rel="stylesheet" type="text/css" href="../style/payment_n_about.css">
+	<link rel="stylesheet" href="../style/navbar.css">
+	<link rel="stylesheet" href="../style/footer.css">
 </head>
 <body>
 <!-- Navigation bar Starts here -->
 
 	<!-- Navigation bar ends here -->
+	<div class="navbar" id="navBar"></div>
 
 <div class="parent">
 	<div class="container">
@@ -71,12 +74,28 @@
 					<input type="number" name="cvv" id="cvv" value="" name="" placeholder="CVV" required>
 					</label>
 				</div>
+				<span>$1200</span>
 			<input type="submit" name="submit" value="Proceed to Checkout" id="checkout" onclick="myFunction()">
 		</div>
 	</div>
 </form>
 </div>
-<script>
+
+<section id="Footer"></section>
+
+<!-- <script src="../script/navbar.js"></script> -->
+
+</body>
+ </html>
+ <script src="../script/navbar.js"></script>
+
+ <script type="module">
+	
+	import { footer, navbar } from "../components/common.js";
+
+document.querySelector("#Footer").innerHTML = footer();
+document.querySelector("#navBar").innerHTML = navbar();
+
 	function myFunction() {
   let text = "Purchased Successfully!\nClick OK to Explore more...";
   if (confirm(text) == true) {
@@ -86,5 +105,3 @@
   }
 }
 </script>
-</body>
-</html>
