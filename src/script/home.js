@@ -1,3 +1,4 @@
+
 import { footer, navbar } from "../components/common.js";
 
 let arr = [
@@ -69,3 +70,4 @@ next_button.addEventListener("click", function () {
   heroSlider.classList.add("Fade-in");
   resetInterval();
 });
+
