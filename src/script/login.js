@@ -1,3 +1,10 @@
+
+import { footer, navbar } from "../components/common.js";
+
+document.querySelector("#Footer").innerHTML = footer();
+document.querySelector("#navBar").innerHTML = navbar();
+
+
 const inputs = document.querySelectorAll(".input-field");
 const toggle_btn = document.querySelectorAll(".toggle");
 const main = document.querySelector("main");
@@ -37,3 +44,8 @@ function moveSlider() {
 bullets.forEach((bullet) => {
   bullet.addEventListener("click", moveSlider);
 });
+
+let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+const cartQuantity = document.querySelector("#cart-quantity");
+cartQuantity.innerText = cartData.length;
+
