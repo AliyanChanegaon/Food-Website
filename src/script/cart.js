@@ -1,28 +1,19 @@
 import { footer } from "../components/common.js";
 
 // Add Items to cart Functionality
+var cartItemContainer = []
 
-var cartItemContainer = [
-    {
-        type: "Starter",
-        img: "../img/starter1.jpg",
-        text: "Paneer Tikka",
-        category: ["Crispy", "Spicy"],
-        price: 80
-    },
+var cartData = JSON.parse(localStorage.getItem("cartData"));
 
-    {
-        type: "Main",
-        img: "../img/starter2.jpg",
-        text: "Malai Kofta",
-        category: ["Soft"],
-        price: 80
-    },
-
-]
+// Check if cartData exists and is an array
+if (Array.isArray(cartData)) {
+  // Add each object from cartData to cartItemContainer
+  cartData.forEach(function(item) {
+    cartItemContainer.push(item);
+  });
+}
 
 var mainContainer = document.getElementById("cart_left-container");
-
 // Loop through the cartItemContainer array
 for (var i = 0; i < cartItemContainer.length; i++) {
     var item = cartItemContainer[i];
@@ -59,7 +50,6 @@ for (var i = 0; i < cartItemContainer.length; i++) {
     // Append the article element to the container
     mainContainer.append(article);
 }
-
 
 
 // Cart item remove Functionality
@@ -122,6 +112,7 @@ let cartTotal = () => {
     }
 
     document.getElementsByClassName('cart_total-price')[0].innerText = `$ ${total}`
+    localStorage.setItem("finalprice", total)
 }
 
 cartTotal()
@@ -153,5 +144,6 @@ minusButtons.forEach(button => {
       }
     });
 });
+
 
 document.querySelector("#Footer").innerHTML =  footer();
