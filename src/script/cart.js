@@ -43,7 +43,7 @@ for (var i = 0; i < cartItemContainer.length; i++) {
             <h4 class="item-price">$ ${item.price.toFixed(2)}</h4>
         </div>
         <div class="cart_item-remove">
-            <button class="cart_delete-btn">remove</i></button>
+            <button class="cart_delete-btn"><i class="fa-sharp fa-solid fa-trash"></i></button>
         </div>
     `;
 
@@ -59,7 +59,7 @@ for (var i = 0; i < removeCartItems.length; i++) {
     var button = removeCartItems[i];
     button.addEventListener('click', (e) => {
     var buttonClicked = e.target;
-    buttonClicked.parentElement.parentElement.remove();
+    buttonClicked.parentElement.parentElement.parentElement.remove();
         updateItemsCount();
         cartTotal()
     });
