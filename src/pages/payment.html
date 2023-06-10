@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Payment gateway- Food website</title>
-	<link rel="stylesheet" type="text/css" href="../style/payment_n_about.css">
+	
+	<link rel="stylesheet" type="text/css" href="../style/payment.css">
 	<link rel="stylesheet" href="../style/navbar.css">
 	<link rel="stylesheet" href="../style/footer.css">
 </head>
+
+
+
+
+
 <body>
 <!-- Navigation bar Starts here -->
 
@@ -18,19 +22,19 @@
 	<div class="container">
 		<div class="left">
 			<h3>BILLING ADDRESS</h3>
-			<form action="" method="POST">
+			<form action="">
 				<label for="name">Full name</label>
-				<input type="text" name="name" id="name" value="" placeholder="Enter name" required />
+				<input type="text" name="name" id="name" value="" placeholder="Enter name"  />
 				<label for="email">E-mail</label>
-				<input type="email" name="email" id="email" value="" placeholder="Enter email" required />
+				<input type="email" name="email" id="email" value="" placeholder="Enter email"  />
 				<label for="address">Address</label>
-				<input type="text" name="address" id="address" value="" placeholder="Enter address" required />
+				<input type="text" name="address" id="address" value="" placeholder="Enter address"  />
 				<label for="city">City</label>
-				<input type="text" name="city" id="city" value="" placeholder="Enter City" required />
+				<input type="text" name="city" id="city" value="" placeholder="Enter City"  />
 				<div id="zip">
 					<label for="state">
 						State
-						<select name="state" required>
+						<select name="state" >
 							<option value="">Choose State..</option>
 							<option value="AndhraPradesh">Andhra Pradesh</option>
 							<option value="Kerala">Kerala</option>
@@ -40,9 +44,11 @@
 					</label>
 						<label for="zipcode">
 						Zip code
-						<input type="number" name="zipcode" id="zipcode" value="" placeholder="Zip code" required />
+						<input type="number" name="zipcode" id="zipcode" value="" placeholder="Zip code"  />
 					</label>
 				</div>
+				
+			</form>
 		</div>
 		<div class="right">
 			<h3>PAYMENT</h3>
@@ -52,14 +58,14 @@
 				<br><br>
 
 				<label for="CreditCardNumber">Credit card number</label>
-				<input type="text" name="CreditCardNumber" id="CreditCardNumber" placeholder="Enter card number" required>
+				<input type="text" name="CreditCardNumber" id="CreditCardNumber" placeholder="Enter card number" >
 				
 				<label for="ExpMonth">Exp month</label>
-				<input type="text" name="ExpMonth" id="ExpMonth" placeholder="Enter Month" required>
-				<div id="zip">
+				<input type="text" name="ExpMonth" id="ExpMonth" placeholder="Enter Month" >
+				<div  id="zip">
 					<label for="ExpYear">
 						Exp year
-						<select name="ExpYear" id="ExpYear" required>
+						<select name="ExpYear" id="ExpYear" >
 							<option value="">Choose Year..</option>
 							<option value="2022">2022</option>
 							<option value="2023">2023</option>
@@ -71,19 +77,20 @@
 					</label>
 					<label for="cvv">
 					CVV
-					<input type="number" name="cvv" id="cvv" value="" name="" placeholder="CVV" required>
+					<input type="number" name="cvv" id="cvv" value="" name="" placeholder="CVV" >
 					</label>
 				</div>
 
-				<span>$1200</span>
+				<span id="Total-price"></span>
 
-				<span id="Final_price"></span>
 				
-
-			<input type="submit" name="submit" value="Proceed to Checkout" id="checkout" onclick="myFunction()">
+				
+						
+			 <input type="submit" name="submit" value="Proceed to Checkout" id="checkout" >
+			
 		</div>
 	</div>
-</form>
+
 </div>
 
 <section id="Footer"></section>
@@ -92,7 +99,7 @@
 
 </body>
  </html>
- <script src="../script/navbar.js"></script>
+ 
 
 	
 <script type="module">
@@ -101,18 +108,39 @@
 document.querySelector("#Footer").innerHTML = footer();
 document.querySelector("#navBar").innerHTML = navbar();
 
-	let cartData = JSON.parse(localStorage.getItem("Finalprice"));
-	let Final_price = document.getElementById("Final_price");
+const totalPrice = document.querySelector("#Total-price");
+
+	let cartData = JSON.parse(localStorage.getItem("finalprice"));
+	console.log(cartData)
+	
+
 	window.addEventListener("load", (event) => {
-		Final_price.innerText = cartData.Finalprice;
+		totalPrice.innerText = `Total : ₹ ${cartData}`;
+		
 	});
+
+	const proceed=document.querySelector("#checkout");
+	const body= document.querySelector("body");
+	proceed.addEventListener("click",myFunction);
+
 	function myFunction() {
-  let text = "Purchased Successfully!\nClick OK to Explore more...";
-  if (confirm(text) == true) {
-    location.href = "Home.html";
-  } else {
-    text = "You canceled!";
-  }
+		
+//   let text = "Purchased Successfully!\nClick OK to Explore more...";
+if(window.confirm("Are You Sure !!")){
+
+	alert("Payment successful");
+	body.innerHTML="";
+	body.innerHTML=`<h1 class="redirecting">Redirecting...</h1>`;
+	const checkout = setTimeout(()=>{
+		window.location.href = "../pages/Home.html";
+	},3000)
+				
+	}
+
+   
+//   } else {
+//     text = "You canceled!";
+//   }
 }
 
 </script>

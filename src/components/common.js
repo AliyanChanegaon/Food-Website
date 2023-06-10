@@ -19,7 +19,7 @@ function navbar() {
        <a href="./Home.html">HOME</a>
        <a href="./Menu.html">MENU</a>
        <a href="./login.html">LOGIN</a>
-       <a href="./sign-up.html">SIGN UP</a>
+       <a href="./sign-up.html">ABOUT US</a>
 
 
   </div>

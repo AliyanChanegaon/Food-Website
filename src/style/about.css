@@ -6,6 +6,9 @@
 	font-family:sans-serif;
 }
 /* Navbar stylings */
+body{
+	background: white;
+}
 nav >ul{
    
     display: flex;
@@ -25,13 +28,20 @@ nav >ul >img{
 /* Navbar styling ends */
 
 /* About page styling begins */
-
+#navBar{
+	background-color: #571d08;
+	color: white;
+	position: sticky;
+	top: 0;
+}
 
   .about-row {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 2em 1em;
 	text-align: center;
+	width: 1200px;
+	margin: auto;
   }
   .about-column {
 	width: 100%;
@@ -41,16 +51,19 @@ nav >ul >img{
 	width: 100%;
 	text-align: center;
 	font-size: 3.5em;
-	color: #1f003b;
+	color: #000000;
+	font-family: 'Pacifico', cursive;
   }
   .about-card {
 	box-shadow: 0 0 2.4em rgba(25, 0, 58, 0.1);
 	padding: 3.5em 1em;
 	border-radius: 0.6em;
-	color: #1f003b;
+	color: black;
 	cursor: pointer;
 	transition: 0.3s;
-	background-color: #ffffff;
+	background: rgb(255,224,210);
+background: linear-gradient(356deg, rgba(255,224,210,1) 51%, rgba(233,183,159,1) 100%);
+	
   }
   .about-card .img-container {
 	width: 8em;
@@ -86,8 +99,9 @@ nav >ul >img{
 	font-size: 1.4em;
   }
   .about-card:hover {
-	background: linear-gradient(#6045ea, #8567f7);
-	color: #ffffff;
+	background: rgb(255,224,210);
+background: linear-gradient(356deg, rgba(255,224,210,1) 51%, rgb(212, 140, 106) 100%);
+	
   }
   .about-card:hover .img-container {
 	transform: scale(1.15);
@@ -101,6 +115,7 @@ nav >ul >img{
 	section {
 	  padding: 1em;
 	}
+	
 	.about-card {
 	  padding: 5em 1em;
 	}
@@ -108,6 +123,8 @@ nav >ul >img{
 	  flex: 0 0 33.33%;
 	  max-width: 33.33%;
 	  padding: 0 1em;
+		
+
 	}
   }
 
@@ -115,91 +132,13 @@ nav >ul >img{
 /* About page styling ends */
 
 /* Billing page styling begins */
-.parent{
-	width: 100vw;
-	min-height: 100vh;
-	background: #bdc2c6;
-	font-size: 1.2rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	
-}
-.container{
-	background: white;
-	max-width: 800px;
-	min-height: 500px;
-	display: flex;
-	justify-content:space-between;
-	align-items: flex-start;
-	padding: 0.5rem 1.5rem;
-	border-radius: 20px;
-	
-	
-}
-.left{
-	flex-basis: 50%;
-}
-.right{
-	flex-basis: 50%;
-}
-form{
-	padding: 1rem;
-}
-label{
-	padding-bottom: 0.1rem;
-}
 
-h3{
-	margin-top: 1rem;
-	color:#2c3e50;
-	}
-
-input[type="text"],input[type="email"]{
-	width: 100%;
-	padding: 0.5rem 0.7rem;
-	margin: 0.5rem 0;
-	outline: none;
-}
-
-#zip{
-	display: flex;
-	margin-top: 0.5rem;
-}
-#zip select{
-	padding: 0.5rem 0.7rem;
-}
-#zip input[type="number"]{
-	padding: 0.5rem 0.7rem;
-	margin-left: 5px;	
-}
-input[type="submit"]{
-	width: 100%;
-	padding: 0.7rem 1.5rem;
-	background: #34495e;
-	color: white;
-	border: none;
-	outline: none;
-	margin-top: 1rem;
-	cursor: pointer;
-}
-
-input[type="submit"]:hover{
-	background: #2c3e50;
-}
-
-
-@media only screen and (max-width: 770px){
-	body{
-		padding: 20px;
-	}
-	.container{
-		flex-direction: column;
-	}
-	body{
-		overflow-x: hidden;
-	}
-}
 
 /* Billing page styling ends */
+@media screen and (max-width: 320px){
+	.about-row{
+		max-width: 320px;
+		margin: auto;
+	}
 
+}

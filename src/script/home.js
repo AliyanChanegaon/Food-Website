@@ -14,7 +14,6 @@ const cartQuantity = document.querySelector("#cart-quantity");
 cartQuantity.innerText = cartData.length;
 
 const heroSlider = document.querySelector(".home-top-section");
-heroSlider.style.backgroundImage = `url(${arr[0]})`;
 const prev_button = document.querySelector(".prev-button");
 const next_button = document.querySelector(".next-button");
 
@@ -26,7 +25,7 @@ function startSlider() {
     if (i == arr.length) {
       i = 0;
     }
-    if (heroSlider.classList.contains("fade-in")) {
+    if ( heroSlider.classList.contains("fade-in")) {
       heroSlider.classList.remove("fade-in");
     }
    

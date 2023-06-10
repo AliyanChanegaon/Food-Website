@@ -1,20 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+ <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
+      
+    <link rel="stylesheet" href="../style/cart.css">
     <link rel="stylesheet" href="../style/navbar.css">
     <link rel="stylesheet" href="../style/footer.css">
-  </head>
-  <body>
-    <div class="navbar" id="navBar"></div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
 
-    <!--  Your content  -->
 
-    <section id="Footer"></section>
-  </body>
-</html>
-<script src="../script/navbar.js"></script>
-<script src="../script/cart.js" type="module"></script>
+  <div class="navbar" id="navBar">
+      
+  </div>
+
+    <section class="cart_section">
+        <h1>SHOPPING CART</h1>
+        <div class="cart_container">
+            <div class="cart_container-left">
+                <div class="cart_left-items" id="cart_left-container">
+                    <!-- Added Cart items will be displayed here -->
+                </div>
+            </div>
+            <div class="cart_container-right">
+                <h2>SUMMARY</h2>
+                <div class="cart_right-item">
+                    <h3 class="items-count">Items: </h3>
+                </div>
+                <div class="cart_right-shipping">
+                    <h3>Shipping</h3>
+                    <p>Free Shipping</p>
+                </div>
+                <div class="cart_right-coupon">
+                    <h3>Promo Code</h3>
+                    <input type="text" placeholder="Code">
+                </div>
+                <div class="cart_right-totalprice">
+                    <h2>Total Price </h2>
+                    <h3 class="cart_total-price"></h3>
+                </div>
+                <a class="cart_right-checkout">Checkout</a>
+            </div>
+        </div>    
+    </section>
+
+    <div id="emptyCartImage" class="cart_empty-image">
+        <div class="empty-image">
+            <img src="https://www.zoe.menu/assets/images/empty_cart.gif" alt="Empty Cart Image">
+        </div>
+        <div class="cart_back-btn">
+            <button>Go Shopping</button>
+        </div>
+    </div>
+    
+    <section id="Footer">
+       
+
+    </section>
+    
+    <script src="../script/home.js" type="module"></script>
+    <script src="../script/cart.js"></script>
+    <script src="../script/navbar.js"></script>
+    
+</body>
+</html> 
+
