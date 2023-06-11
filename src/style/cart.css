@@ -218,13 +218,27 @@ body{
 /*--------- mobile-Screen----------- */
 @media screen and (max-width: 600px) {
     .cart_container {
-        width: 90%;
+        width: 100%;
         grid-template-columns: 1fr;
+        
     }
 
     .cart_item {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        display: flex;
+      flex-wrap: wrap;
+    }
+    .cart_item-quantity > input{
+        width: 1rem;
+    }
+
+    #cart_left-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cart_container-right{
+      
+        margin: auto;
+        margin-bottom: 80px;
     }
 }
