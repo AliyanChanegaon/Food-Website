@@ -38,7 +38,7 @@ for (var i = 0; i < arr.length; i++) {
     // Create a new article element
     var article = document.createElement("article");
     article.className = "cart_item";
-    article.innerHTML+=`<h1>Hello</h1>`;
+  
 
     // Create the HTML structure inside the article element
     article.innerHTML += `
