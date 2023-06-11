@@ -238,9 +238,15 @@ body{
     }  */
     
     .cart_container-right{
-        padding: 15px;
+        width: 320px;
         margin: auto;
          margin-bottom: 280px; 
          min-height: 0px;
     }
+    .cart_container{
+        height: 0px;
+    }
+    /* .cart_section{
+        height: 0px;
+    } */
 }
