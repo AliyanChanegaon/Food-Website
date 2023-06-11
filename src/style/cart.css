@@ -231,14 +231,16 @@ body{
         width: 1rem;
     }
 
-    #cart_left-container{
+   /* #cart_left-container{
         display: flex;
         justify-content: center;
         align-items: center;
-    }
+    }  */
+    
     .cart_container-right{
-      
+        padding: 15px;
         margin: auto;
-        margin-bottom: 80px;
+         margin-bottom: 280px; 
+         min-height: 0px;
     }
 }
